@@ -52,5 +52,6 @@ are generated using the following commands:
 - python scripts/freqs_modified.py --snpfreqmin 0.03 BC02.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC02_modified.variants.0.03.txt
 - python scripts/freqs_modified.py --snpfreqmin 0.03 BC03.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC03_modified.variants.0.03.txt
 
-
-
+However, we found that BC01/02/03.variants.0.03.txt and BC01/02/03_modified.variants.0.03.txt do not contain the same number of variants. This indicates BC01/02/03.variants.0.03.txt was not generated BC01/02/03.trimmed.sorted.bam from the same [repo](https://github.com/nickloman/zika-isnv), but from some other bam files. We decided to move on using BC01/02/03.trimmed.sorted.bam provided by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv), since our goal is to test classifying models by
+- alt allele freq
+- the strand bias calculated using [Guo2012](The effect of strand bias in Illumina short-read sequencing data)'s methods. 
