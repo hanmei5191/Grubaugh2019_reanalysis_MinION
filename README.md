@@ -17,10 +17,19 @@ These three tables were generated using the following commands from [Nicholas J.
 In ["start_from_variants"](), the variants tables contain two colomns—ForwardVariantCov and ReverseVariantCov, and the strand bias is calculated using the following equation:
 StrandAF = pmin(ForwardVariantCov, ReverseVariantCov) / pmax(ForwardVariantCov, ReverseVariantCov). 
 
-We found this calculation disturbing because it does not incorporate ForwardRefCov, ReverseRefCov. [Guo2012](The effect of strand bias in Illumina short-read sequencing data) described three ways to calculate strand bias. We decided to adapt these three methods to re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are not present in the three variants tables in ["start_from_variants"](). We need to generate new variants tables by starting the bam files. This is the reason why we have the second folder ["start_from_trimmed.sorted.bam"]() included in this repo. 
+We found this calculation possibly inaccurate because it does not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](The effect of strand bias in Illumina short-read sequencing data) described three ways to calculate strand bias. We decided to adapt these three methods to re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are not present in the three variants tables in ["start_from_variants"](). We need to generate new variants tables by starting the bam files. This is the reason why we have the second folder ["start_from_trimmed.sorted.bam"]() included in this repo. 
 
 2. The second folder ["start_from_trimmed.sorted.bam"]() starts from the three trimmed.sorted.bam files taken from [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). These are: 
 - "BC01.trimmed.sorted.bam"
 - "BC02.trimmed.sorted.bam"
 - "BC03.trimmed.sorted.bam"
+
+We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. These codes are: 
+- at line 46: 
+print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov") 
+-> 
+print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov\tRefCov\tForwardRefCov\tReverseRefCov")
+
+
+
 
