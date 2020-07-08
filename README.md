@@ -24,7 +24,7 @@ We found this calculation possibly inaccurate because it does not incorporate Fo
 - "BC02.trimmed.sorted.bam"
 - "BC03.trimmed.sorted.bam"
 
-We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. The modified script is scripts/freqs_modified.py. These codes are: 
+We modified the python script "scripts/freqs.py" by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. The modified script is "scripts/freqs_modified.py". These codes are: 
 
 at line 46: 
 
