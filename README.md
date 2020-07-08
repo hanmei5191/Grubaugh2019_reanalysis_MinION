@@ -62,4 +62,16 @@ We found that BC01/02/03.variants.0.03.txt and BC01/02/03_modified.variants.0.03
 
 ### The thrid folder [start_from_reads](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_reads) starts from the raw MinION reads. 
 
-The analysis is described in start_from_reads.ipynb. The variants called are almost same 
+The analysis is described in start_from_reads.ipynb. 
+
+[Conclusion] Compare 
+
+variants tables BC01/02/03_modified/confirm.variants.0.03.new.txt (called from raw reads) 
+
+to 
+
+variants tables BC01/02/03_modified/confirm.variants.0.03.txt (called from BC01/02/03.trimmed.sorted.bam provided by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv))
+
+-> 
+
+only 1–2 positions were seen as inconsistent. 
