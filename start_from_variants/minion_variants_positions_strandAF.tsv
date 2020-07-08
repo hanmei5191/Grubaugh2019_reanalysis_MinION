@@ -1,4 +1,4 @@
-Pos	Qual	Freq	Ref	Base	UngappedCoverage	TotalCoverage	VariantCov	ForwardVariantCov	ReverseVariantCov	replica	State	StrandAF	D
+Pos	Qual	Freq	Ref	Base	UngappedCoverage	TotalCoverage	VariantCov	ForwardVariantCov	ReverseVariantCov	replica	State	StrandAF	Decision
 1066	0	0.043726235741444866	G	A	2104	2164	92	25	67	a	FALSE	0.373134328358209	0
 1070	0	0.09217474795967355	C	T	2083	2164	192	104	88	a	TRUE	0.8461538461538461	1
 1079	0	0.046049442559379546	G	A	2063	2164	95	78	17	a	FALSE	0.21794871794871795	0
