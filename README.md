@@ -26,13 +26,19 @@ We found this calculation possibly inaccurate because it does not incorporate Fo
 
 We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. These codes are: 
 at line 46: 
+
 print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov") 
+
 -> 
+
 print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov\tRefCov\tForwardRefCov\tReverseRefCov")
 
 at line 96: 
+
 print ("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (pileupcolumn.pos+1, q, float(freqs[base].count) / float(nonindel_coverage), ref, base, nonindel_coverage, total_nonindel_coverage, freqs[base].count, freqs[base].forward, freqs[base].reverse))
+
 -> 
+
 print ("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (pileupcolumn.pos+1, q, float(freqs[base].count) / float(nonindel_coverage), ref, base, nonindel_coverage, total_nonindel_coverage, freqs[base].count, freqs[base].forward, freqs[base].reverse, freqs[ref].count, freqs[ref].forward, freqs[ref].reverse))
 
 
