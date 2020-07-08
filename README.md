@@ -26,7 +26,7 @@ However, we found this strand bias calculation possibly inaccurate because it do
 - "BC02.trimmed.sorted.bam"
 - "BC03.trimmed.sorted.bam"
 
-We modified the python script "scripts/freqs.py" by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. The modified script is "scripts/freqs_modified.py". These codes are: 
+We modified the python script "scripts/freqs.py" by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. The modified script is "scripts/freqs_modified.py". The changes in code are: 
 
 at line 46: 
 
