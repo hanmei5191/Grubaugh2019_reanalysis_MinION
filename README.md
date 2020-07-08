@@ -24,7 +24,7 @@ We found this calculation possibly inaccurate because it does not incorporate Fo
 - "BC02.trimmed.sorted.bam"
 - "BC03.trimmed.sorted.bam"
 
-We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. These codes are: 
+We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. The modified script is scripts/freqs_modified.py. These codes are: 
 
 at line 46: 
 
@@ -42,7 +42,15 @@ print ("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (pileupcolumn.pos+1, q, float(
 
 print ("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (pileupcolumn.pos+1, q, float(freqs[base].count) / float(nonindel_coverage), ref, base, nonindel_coverage, total_nonindel_coverage, freqs[base].count, freqs[base].forward, freqs[base].reverse, freqs[ref].count, freqs[ref].forward, freqs[ref].reverse))
 
+Then the new variants tables 
+- BC01_modified.variants.0.03.txt
+- BC02_modified.variants.0.03.txt
+- BC03_modified.variants.0.03.txt
 
+are generated using the following commands: 
+- python scripts/freqs_modified.py --snpfreqmin 0.03 BC01.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC01_modified.variants.0.03.txt
+- python scripts/freqs_modified.py --snpfreqmin 0.03 BC02.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC02_modified.variants.0.03.txt
+- python scripts/freqs_modified.py --snpfreqmin 0.03 BC03.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC03_modified.variants.0.03.txt
 
 
 
