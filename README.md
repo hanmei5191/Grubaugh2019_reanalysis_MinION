@@ -3,7 +3,7 @@ This repo develops machine learning models to cluster the true and false positiv
 
 One author—[Nicholas J. Loman](https://github.com/nickloman/zika-isnv)—from [Grubaugh2019](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1618-7) published a Github repo showing the process how they classified the true and false positive MinION variants using a logistic regression model. 
 
-My repo here contains two folders. 
+## My repo here contains three folders. 
 ### The first folder ["start_from_variants"](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_variants) starts from three variants tables taken from [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). The three tables are 
 - "BC01.variants.0.03.txt" 
 - "BC02.variants.0.03.txt"
@@ -57,3 +57,7 @@ are generated using the following commands:
 We found that BC01/02/03.variants.0.03.txt and BC01/02/03_modified.variants.0.03.txt do not contain the same number of variants. This indicates BC01/02/03.variants.0.03.txt was not generated from BC01/02/03.trimmed.sorted.bam in the same [repo](https://github.com/nickloman/zika-isnv), but from some other bam files. We decided to move on using BC01/02/03.trimmed.sorted.bam provided by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv), since our goal is to test classifying models by
 - ALT allele freq
 - the strand bias calculated using [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666)'s methods. 
+
+### The thrid folder ["start_from_reads"](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_reads) starts from the raw MinION reads. 
+
+The analysis is described in start_from_reads.ipynb. 
