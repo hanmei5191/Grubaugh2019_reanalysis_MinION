@@ -25,6 +25,7 @@ We found this calculation possibly inaccurate because it does not incorporate Fo
 - "BC03.trimmed.sorted.bam"
 
 We modified the python script scripts/freqs.py by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv) to generate variants tables containing three more columns—RefCov, ForwardRefCov, and ReverseRefCov. These codes are: 
+
 at line 46: 
 
 print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov") 
