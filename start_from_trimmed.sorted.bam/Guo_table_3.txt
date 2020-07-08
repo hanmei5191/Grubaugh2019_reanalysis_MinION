@@ -1,0 +1,4 @@
+Pos	ForwardVariantCov	ReverseVariantCov	ForwardRefCov	ReverseRefCov
+43917013	2	0	11	20
+95923670	2	0	16	10
+57088850	2	0	8	16
