@@ -17,6 +17,8 @@ These three tables were generated using the following commands from [Nicholas J.
 In ["start_from_variants"](), the variants tables contain two colomns—ForwardVariantCov and ReverseVariantCov, and the strand bias is calculated using the following equation:
 StrandAF = pmin(ForwardVariantCov, ReverseVariantCov) / pmax(ForwardVariantCov, ReverseVariantCov). 
 
+We reproduced the logistic regression model by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). In addition, we developed two more models—KNN and SVM. The analysis is described in "start_from_variants.ipynb". 
+
 We found this calculation possibly inaccurate because it does not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](The effect of strand bias in Illumina short-read sequencing data) described three ways to calculate strand bias. We decided to adapt these three methods to re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are not present in the three variants tables in ["start_from_variants"](). We need to generate new variants tables by starting the bam files. This is the reason why we have the second folder ["start_from_trimmed.sorted.bam"]() included in this repo. 
 
 2. The second folder ["start_from_trimmed.sorted.bam"]() starts from the three trimmed.sorted.bam files taken from [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). These are: 
