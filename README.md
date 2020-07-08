@@ -14,14 +14,12 @@ These three tables were generated using the following commands from [Nicholas J.
 - python scripts/freqs.py --snpfreqmin 0.03 BC02.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC02.variants.0.03.txt
 - python scripts/freqs.py --snpfreqmin 0.03 BC03.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC03.variants.0.03.txt
 
-In ["start_from_variants"](), the variants tables contain two colomns—ForwardVariantCov and ReverseVariantCov, and the strand bias is calculated using the following equation:
+In ["start_from_variants"](), the variants tables contain two colomns—ForwardVariantCov and ReverseVariantCov, and the strand bias was calculated using the following equation:
 StrandAF = pmin(ForwardVariantCov, ReverseVariantCov) / pmax(ForwardVariantCov, ReverseVariantCov). 
 
 We reproduced the logistic regression model by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). In addition, we developed two more models—KNN and SVM. The analysis is described in "start_from_variants.ipynb". 
 
-We found this calculation possibly inaccurate because it does not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](The effect of strand bias in Illumina short-read sequencing data) described three ways to calculate strand bias. We decided to adapt these three methods to re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are not present in the three variants tables in ["start_from_variants"](). We need to generate new variants tables by starting the bam files. This is the reason why we have the second folder ["start_from_trimmed.sorted.bam"]() included in this repo. 
-
-
+However, we found this strand bias calculation possibly inaccurate because it does not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](The effect of strand bias in Illumina short-read sequencing data) described three ways to calculate strand bias. We decided to adapt these three methods, and re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are needed in [Guo2012](The effect of strand bias in Illumina short-read sequencing data), but are not present in the three variants tables in ["start_from_variants"](). We need to generate new variants tables by starting from the bam files. This is the reason why we have the second folder ["start_from_trimmed.sorted.bam"]() included in this repo. 
 
 2. The second folder ["start_from_trimmed.sorted.bam"]() starts from the three trimmed.sorted.bam files taken from [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). These are: 
 - "BC01.trimmed.sorted.bam"
@@ -57,5 +55,5 @@ are generated using the following commands:
 - python scripts/freqs_modified.py --snpfreqmin 0.03 BC03.trimmed.sorted.bam refs/ZIKV_REF.fasta > BC03_modified.variants.0.03.txt
 
 However, we found that BC01/02/03.variants.0.03.txt and BC01/02/03_modified.variants.0.03.txt do not contain the same number of variants. This indicates BC01/02/03.variants.0.03.txt was not generated BC01/02/03.trimmed.sorted.bam from the same [repo](https://github.com/nickloman/zika-isnv), but from some other bam files. We decided to move on using BC01/02/03.trimmed.sorted.bam provided by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv), since our goal is to test classifying models by
-- alt allele freq
+- ALT allele freq
 - the strand bias calculated using [Guo2012](The effect of strand bias in Illumina short-read sequencing data)'s methods. 
