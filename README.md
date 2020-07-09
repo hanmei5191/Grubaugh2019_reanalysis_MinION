@@ -34,7 +34,7 @@ print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\
 
 -> 
 
-print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov<span>**\tRefCov\tForwardRefCov\tReverseRefCov**</span>")
+print ("Pos\tQual\tFreq\tRef\tBase\tUngappedCoverage\tTotalCoverage\tVariantCov\tForwardVariantCov\tReverseVariantCov<span class="italic"> **\tRefCov\tForwardRefCov\tReverseRefCov** </span>")
 
 at line 96: 
 
