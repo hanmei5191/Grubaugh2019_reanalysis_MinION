@@ -19,7 +19,7 @@ StrandAF = pmin(ForwardVariantCov, ReverseVariantCov) / pmax(ForwardVariantCov, 
 
 We reproduced the logistic regression model by [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). In addition, we developed two more models—KNN and SVM. The analysis is described in start_from_variants.ipynb. 
 
-However, we found this strand bias calculation possibly inaccurate because it does not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666) described three ways to calculate strand bias. We decided to adapt these three methods, and re-calcualte the strand bias. However, since ForwardRefCov and ReverseRefCov are needed in [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666), but are not present in the three variants tables in [start_from_variants](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_variants). We need to generate new variants tables by starting from the bam files. This is the reason why we have the second folder [start_from_trimmed.sorted.bam](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_trimmed.sorted.bam) included in this repo. 
+We found this strand bias calculation possibly inaccurate because it did not incorporate ForwardRefCov and ReverseRefCov. [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666) described three ways to calculate strand bias. We decided to adapt these three methods, and to re-calcualte the strand bias. However, ForwardRefCov and ReverseRefCov are needed in [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666), but are not present in the three variants tables in [start_from_variants](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_variants). Therefore, we need to generate new variants tables by starting from the bam files. This is the reason why we have the second folder [start_from_trimmed.sorted.bam](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_trimmed.sorted.bam) included in this repo. 
 
 ### The second folder [start_from_trimmed.sorted.bam](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_trimmed.sorted.bam) starts from the three trimmed.sorted.bam files taken from [Nicholas J. Loman](https://github.com/nickloman/zika-isnv). These are: 
 - BC01.trimmed.sorted.bam
@@ -60,7 +60,7 @@ We found that BC01/02/03.variants.0.03.txt and BC01/02/03_modified.variants.0.03
 - ALT allele freq
 - the strand bias calculated using [Guo2012](https://link.springer.com/article/10.1186/1471-2164-13-666)'s methods. 
 
-### The thrid folder [start_from_reads](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_reads) starts from the raw MinION reads. 
+### Meanwhile, we started the thrid folder [start_from_reads](https://github.com/hanmei5191/Grubaugh2019_reanalysis_MinION/tree/master/start_from_reads) calling variants from the very first step. The variant calling steps are: 1) reads alignment, 2) ARTIC trimming, and 3) variant calling. 
 
 The analysis is described in start_from_reads.ipynb. 
 
